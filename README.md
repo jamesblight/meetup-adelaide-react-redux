@@ -5,8 +5,9 @@ Distillery on the 16th of August, 2016.
 ## Project Strucutre
 
 The code is broken up into modules which match the development stages of the demo
-application. Each module can be run individually by using the command `npm start`
-from the module's root directory.
+application. Each module can be run individually by replacing the rendered
+component in `src/index.js` and running the command `npm start` from the root
+directory.
 
 I used Create React App https://github.com/facebookincubator/create-react-app to
 get started without having to worry about build configuration. If your're starting

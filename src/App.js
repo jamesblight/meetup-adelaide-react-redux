@@ -1,19 +1,23 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import AppLayout from './components/AppLayout';
 import './App.css';
 
 class App extends Component {
+  renderHeader() {
+    return <h2>Creating Web Applications With React and Redux</h2>;
+  }
+
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
+      <AppLayout
+        renderHeader={this.renderHeader}
+      >
         <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+          To get started, replace the <i> App</i> component rendered in
+          <i> index.js</i> with the <i> App</i> component from
+          <i> src/modules/1-basic-components</i>
         </p>
-      </div>
+      </AppLayout>
     );
   }
 }
