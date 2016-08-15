@@ -6,7 +6,7 @@ import CalendarNav from '../CalendarNav';
 import './style.css';
 
 const cal = new Calendar();
-const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday',
+const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday',
   'Friday', 'Saturday'];
 const monthNames = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
@@ -44,7 +44,7 @@ class MonthView extends Component {
           </tr>
 
           <tr className="MonthView-daysHeader">
-            { daysOfWeek.map(d => <th key={d}>{d.slice(0, 2)}</th>) }
+            { dayNames.map(d => <th key={d}>{d.slice(0, 2)}</th>) }
           </tr>
         </thead>
 
