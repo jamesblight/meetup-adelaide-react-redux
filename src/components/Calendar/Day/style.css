@@ -1,0 +1,31 @@
+.Day {
+  position: relative;
+  text-align: center;
+  vertical-align: top;
+  width: 14%;
+  padding-bottom: 14%;
+  font-size: 14px;
+}
+
+.Day:hover:not(.Day--outsideMonth) {
+  cursor: pointer;
+  background-color: #eeeeee;
+}
+
+.Day.is-selected {
+  color: #3670e2;
+  font-weight: bold;
+}
+
+.Day--outsideMonth {
+  color: #aaaaaa;
+}
+
+.Day-content {
+  position: absolute;
+  padding: 2px 0 0 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  text-align: right;
+}

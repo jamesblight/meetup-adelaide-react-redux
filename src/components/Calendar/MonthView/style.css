@@ -1,0 +1,18 @@
+.MonthView {
+  height: 100%;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.MonthView-header > th {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.MonthView-daysHeader {
+  text-align: center;
+}
+
+.MonthView-daysHeader > th {
+  padding: 10px 0;
+}

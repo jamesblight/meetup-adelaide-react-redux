@@ -1,16 +1,8 @@
 import React, { Component } from 'react';
 import AppLayout from '../../components/AppLayout';
+import Calendar from '../../components/Calendar';
+import MonthView from '../../components/Calendar/MonthView';
 
-/**
- * The first module introduces rendering basic React components.
- * Concepts covered include:
- *    * React components
- *    * React elements
- *    * React instances
- *    * JSX
- *    * lifecycle methods
- *    * functional components
- */
 class App extends Component {
   renderHeader() {
     return (
@@ -25,7 +17,13 @@ class App extends Component {
     return (
       <AppLayout
         renderHeader={this.renderHeader}
-      />
+      >
+        <Calendar>
+          {(year, month, selectedDate) => (
+            <MonthView year={year} month={month} selectedDate={selectedDate} />
+          )}
+        </Calendar>
+      </AppLayout>
     );
   }
 }

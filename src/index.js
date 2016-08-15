@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
-// import BasicReactApp from './modules/1-basic-react/App';
+// import App from './App';
+import BasicReactApp from './modules/1-basic-react/App';
 import './index.css';
 
 /**
@@ -15,6 +15,6 @@ import './index.css';
  *
  */
 ReactDOM.render(
-  <App />,
+  <BasicReactApp />,
   document.getElementById('root')
 );
