@@ -1,10 +1,19 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import './style.css';
 
 class CalendarNav extends Component {
+  static propTypes = {
+    onClick: PropTypes.func.isRequired
+  }
+
   render() {
     return (
-      <button className="CalendarNav">{this.props.children}</button>
+      <button
+        onClick={this.props.onClick}
+        className="CalendarNav"
+      >
+        {this.props.children}
+      </button>
     )
   }
 }

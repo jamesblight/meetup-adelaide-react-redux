@@ -30,14 +30,14 @@ class MonthView extends Component {
     );
   }
 
-  navigatePrevious = () => {
+  navigateNext = () => {
     const { year, month, setYearMonth } = this.props;
     const previousDate = moment().year(year).month(month).subtract(1, 'month');
 
     setYearMonth(previousDate.year(), previousDate.month());
   }
 
-  navigateNext = () => {
+  navigatePrevious = () => {
     const { year, month, setYearMonth } = this.props;
     const nextDate = moment().year(year).month(month).add(1, 'month');
 
@@ -54,7 +54,7 @@ class MonthView extends Component {
           <tr className="MonthView-header">
             <th><CalendarNav onClick={this.navigatePrevious}>&larr;</CalendarNav></th>
 
-            <th colSpan="5">{`${monthNames[month]} ${year}`}</th>
+            <th colSpan="5">{monthNames[month]}</th>
 
             <th><CalendarNav onClick={this.navigateNext}>&rarr;</CalendarNav></th>
           </tr>
