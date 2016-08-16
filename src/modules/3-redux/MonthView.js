@@ -16,7 +16,14 @@ class MonthView extends Component {
   static propTypes = {
     year: PropTypes.number.isRequired,
     month: PropTypes.number.isRequired,
-    selectedDate: PropTypes.object.isRequired
+    selectedDate: PropTypes.object.isRequired,
+    navigateNext: PropTypes.func.isRequired,
+    navigatePrevious: PropTypes.func.isRequired,
+    loadEvents: PropTypes.func.isRequired
+  }
+
+  componentDidMount() {
+    this.props.loadEvents();
   }
 
   isSelected = (date) => {
@@ -31,16 +38,18 @@ class MonthView extends Component {
   }
 
   render() {
-    const { year, month, selectedDate } = this.props;
+    const { year, month, selectedDate, navigateNext, navigatePrevious } = this.props;
     const monthDates = cal.monthDates(year, month);
 
     return (
       <table className="MonthView">
         <thead>
           <tr className="MonthView-header">
-            <th><CalendarNav>&larr;</CalendarNav></th>
-            <th colSpan="5">{monthNames[month]}</th>
-            <th><CalendarNav>&rarr;</CalendarNav></th>
+            <th><CalendarNav onClick={navigatePrevious}>&larr;</CalendarNav></th>
+
+            <th colSpan="5">{`${monthNames[month]} ${year}`}</th>
+
+            <th><CalendarNav onClick={navigateNext}>&rarr;</CalendarNav></th>
           </tr>
 
           <tr className="MonthView-daysHeader">

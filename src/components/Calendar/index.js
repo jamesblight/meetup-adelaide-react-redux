@@ -4,40 +4,23 @@ import './style.css';
 
 class Calendar extends Component {
   static propTypes = {
-    children: PropTypes.func.isRequired
+    children: PropTypes.func.isRequired,
+    year: PropTypes.number,
+    month: PropTypes.number,
+    selectedDate: PropTypes.object
   }
 
-  constructor(props) {
-    super(props);
-
-    const today = moment();
-    this.state = {
-      year: today.year(),
-      month: today.month(),
-      selectedDate: today
-    };
-  }
-
-  setYearMonth = (year, month) => {
-    this.setState({
-      year,
-      month
-    });
+  static defaultProps = {
+    year: moment().year(),
+    month: moment().month(),
+    selectedDate: moment()
   }
 
   render() {
-    const { children } = this.props;
-    const { year, month, selectedDate } = this.state;
-
+    const { children, year, month, selectedDate } = this.props;
     return (
       <div className="Calendar">
-        { children(
-            year,
-            month,
-            selectedDate,
-            this.setYearMonth
-          )
-        }
+        { children(year, month, selectedDate) }
       </div>
     );
   }
